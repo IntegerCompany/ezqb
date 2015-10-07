@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7A736FE51B6CE8760096CAF3 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A736FE41B6CE8760096CAF3 /* AlertView.swift */; };
+		7A736FE71B6CE9BC0096CAF3 /* UserLoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A736FE61B6CE9BC0096CAF3 /* UserLoginTextField.swift */; };
+		7A8E18DA1B749C1900735287 /* Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8E18D91B749C1900735287 /* Observers.swift */; };
+		7A8E18DC1B74F99400735287 /* KeyboardActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8E18DB1B74F99400735287 /* KeyboardActions.swift */; };
+		7AE5E4651B7F5D310021547A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE5E4641B7F5D310021547A /* SystemConfiguration.framework */; };
+		7AE5E4671B7F5D510021547A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5E4661B7F5D510021547A /* Reachability.swift */; };
+		C6A6123D1B725B69001DEB89 /* ServiceImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A6123C1B725B69001DEB89 /* ServiceImageUploader.swift */; };
+		C6A612401B725BBF001DEB89 /* NetworkFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A6123F1B725BBF001DEB89 /* NetworkFetcher.swift */; };
+		DC35F8481B67EA94008B81A4 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC35F8471B67EA94008B81A4 /* ResetPasswordViewController.swift */; };
+		DC6220281B5FE78100C658FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6220271B5FE78100C658FC /* AppDelegate.swift */; };
+		DC62202A1B5FE78100C658FC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6220291B5FE78100C658FC /* LoginViewController.swift */; };
+		DC62202D1B5FE78100C658FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC62202B1B5FE78100C658FC /* Main.storyboard */; };
+		DC62202F1B5FE78100C658FC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC62202E1B5FE78100C658FC /* Images.xcassets */; };
+		DC6220321B5FE78100C658FC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC6220301B5FE78100C658FC /* LaunchScreen.xib */; };
+		DC62203E1B5FE78100C658FC /* EZQBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62203D1B5FE78100C658FC /* EZQBTests.swift */; };
+		DC6220481B5FF2F900C658FC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6220471B5FF2F900C658FC /* SignUpViewController.swift */; };
+		DCC275211B669A140051A0E0 /* UploadImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC275201B669A140051A0E0 /* UploadImageCollectionViewController.swift */; };
+		DCC275231B669BCE0051A0E0 /* UploadImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC275221B669BCE0051A0E0 /* UploadImageCell.swift */; };
+		DCC275261B669E2B0051A0E0 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC275251B669E2B0051A0E0 /* DataProvider.swift */; };
+		DCC2752B1B669E7A0051A0E0 /* ServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC2752A1B669E7A0051A0E0 /* ServiceApi.swift */; };
+		DCC2752D1B669F0B0051A0E0 /* JSONSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC2752C1B669F0B0051A0E0 /* JSONSerializable.swift */; };
+		DCC2752F1B669F550051A0E0 /* NonceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC2752E1B669F550051A0E0 /* NonceResponse.swift */; };
+		DCC275311B66A46F0051A0E0 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC275301B66A46F0051A0E0 /* BaseResponse.swift */; };
+		EDCAD2F01B690FBC003ADD47 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCAD2EF1B690FBC003ADD47 /* Defaults.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC6220381B5FE78100C658FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC62201A1B5FE78100C658FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC6220211B5FE78100C658FC;
+			remoteInfo = EZQB;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7A736FE41B6CE8760096CAF3 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		7A736FE61B6CE9BC0096CAF3 /* UserLoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginTextField.swift; sourceTree = "<group>"; };
+		7A8E18D91B749C1900735287 /* Observers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observers.swift; sourceTree = "<group>"; };
+		7A8E18DB1B74F99400735287 /* KeyboardActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardActions.swift; sourceTree = "<group>"; };
+		7AE5E4641B7F5D310021547A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7AE5E4661B7F5D510021547A /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		C6A6123C1B725B69001DEB89 /* ServiceImageUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceImageUploader.swift; sourceTree = "<group>"; };
+		C6A6123F1B725BBF001DEB89 /* NetworkFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkFetcher.swift; sourceTree = "<group>"; };
+		DC35F8471B67EA94008B81A4 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		DC6220221B5FE78100C658FC /* EZQB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EZQB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC6220261B5FE78100C658FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC6220271B5FE78100C658FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DC6220291B5FE78100C658FC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DC62202C1B5FE78100C658FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DC62202E1B5FE78100C658FC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DC6220311B5FE78100C658FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		DC6220371B5FE78100C658FC /* EZQBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EZQBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC62203C1B5FE78100C658FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC62203D1B5FE78100C658FC /* EZQBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EZQBTests.swift; sourceTree = "<group>"; };
+		DC6220471B5FF2F900C658FC /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		DCC275201B669A140051A0E0 /* UploadImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadImageCollectionViewController.swift; sourceTree = "<group>"; };
+		DCC275221B669BCE0051A0E0 /* UploadImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadImageCell.swift; sourceTree = "<group>"; };
+		DCC275251B669E2B0051A0E0 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		DCC2752A1B669E7A0051A0E0 /* ServiceApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceApi.swift; sourceTree = "<group>"; };
+		DCC2752C1B669F0B0051A0E0 /* JSONSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializable.swift; sourceTree = "<group>"; };
+		DCC2752E1B669F550051A0E0 /* NonceResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonceResponse.swift; sourceTree = "<group>"; };
+		DCC275301B66A46F0051A0E0 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		EDCAD2EF1B690FBC003ADD47 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC62201F1B5FE78100C658FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AE5E4651B7F5D310021547A /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC6220341B5FE78100C658FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7AE5E4681B7F5F4E0021547A /* Freamworks */ = {
+			isa = PBXGroup;
+			children = (
+				7AE5E4641B7F5D310021547A /* SystemConfiguration.framework */,
+			);
+			name = Freamworks;
+			sourceTree = "<group>";
+		};
+		C6A6123E1B725BB2001DEB89 /* NetworkFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				C6A6123F1B725BBF001DEB89 /* NetworkFetcher.swift */,
+			);
+			name = NetworkFetcher;
+			sourceTree = "<group>";
+		};
+		C6A612411B725FCF001DEB89 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				7A8E18DB1B74F99400735287 /* KeyboardActions.swift */,
+				7A736FE41B6CE8760096CAF3 /* AlertView.swift */,
+				7A736FE61B6CE9BC0096CAF3 /* UserLoginTextField.swift */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		C6A612421B725FE5001DEB89 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				DCC275221B669BCE0051A0E0 /* UploadImageCell.swift */,
+			);
+			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		C6FD61441B738B2C00F11FA5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DC62202E1B5FE78100C658FC /* Images.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		DC6220191B5FE78100C658FC = {
+			isa = PBXGroup;
+			children = (
+				7AE5E4681B7F5F4E0021547A /* Freamworks */,
+				DC6220241B5FE78100C658FC /* EZQB */,
+				DC62203A1B5FE78100C658FC /* EZQBTests */,
+				DC6220231B5FE78100C658FC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC6220231B5FE78100C658FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC6220221B5FE78100C658FC /* EZQB.app */,
+				DC6220371B5FE78100C658FC /* EZQBTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC6220241B5FE78100C658FC /* EZQB */ = {
+			isa = PBXGroup;
+			children = (
+				DC6220271B5FE78100C658FC /* AppDelegate.swift */,
+				EDCAD2EE1B690F62003ADD47 /* Defaults */,
+				DCC275241B669E150051A0E0 /* DataProvider */,
+				DCC275281B669E570051A0E0 /* Model */,
+				DCD670301B6152B7001F9B7B /* Controllers */,
+				DCC275291B669E660051A0E0 /* View */,
+				C6FD61441B738B2C00F11FA5 /* Resources */,
+				DC6220251B5FE78100C658FC /* Supporting Files */,
+			);
+			path = EZQB;
+			sourceTree = "<group>";
+		};
+		DC6220251B5FE78100C658FC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC6220261B5FE78100C658FC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC62203A1B5FE78100C658FC /* EZQBTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC62203D1B5FE78100C658FC /* EZQBTests.swift */,
+				DC62203B1B5FE78100C658FC /* Supporting Files */,
+			);
+			path = EZQBTests;
+			sourceTree = "<group>";
+		};
+		DC62203B1B5FE78100C658FC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC62203C1B5FE78100C658FC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DCC275241B669E150051A0E0 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				DCC275271B669E390051A0E0 /* ServiceApi */,
+				DCC275251B669E2B0051A0E0 /* DataProvider.swift */,
+			);
+			name = DataProvider;
+			sourceTree = "<group>";
+		};
+		DCC275271B669E390051A0E0 /* ServiceApi */ = {
+			isa = PBXGroup;
+			children = (
+				C6A6123E1B725BB2001DEB89 /* NetworkFetcher */,
+				DCC2752A1B669E7A0051A0E0 /* ServiceApi.swift */,
+				C6A6123C1B725B69001DEB89 /* ServiceImageUploader.swift */,
+			);
+			name = ServiceApi;
+			sourceTree = "<group>";
+		};
+		DCC275281B669E570051A0E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DCC2752C1B669F0B0051A0E0 /* JSONSerializable.swift */,
+				DCC275301B66A46F0051A0E0 /* BaseResponse.swift */,
+				DCC2752E1B669F550051A0E0 /* NonceResponse.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DCC275291B669E660051A0E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C6A612421B725FE5001DEB89 /* CustomCells */,
+				C6A612411B725FCF001DEB89 /* CustomViews */,
+				DC62202B1B5FE78100C658FC /* Main.storyboard */,
+				DC6220301B5FE78100C658FC /* LaunchScreen.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		DCD670301B6152B7001F9B7B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ED883A331B83976C00D6C224 /* CustomClasses */,
+				DC6220291B5FE78100C658FC /* LoginViewController.swift */,
+				DC6220471B5FF2F900C658FC /* SignUpViewController.swift */,
+				DC35F8471B67EA94008B81A4 /* ResetPasswordViewController.swift */,
+				DCC275201B669A140051A0E0 /* UploadImageCollectionViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		ED883A331B83976C00D6C224 /* CustomClasses */ = {
+			isa = PBXGroup;
+			children = (
+				7A8E18D91B749C1900735287 /* Observers.swift */,
+				7AE5E4661B7F5D510021547A /* Reachability.swift */,
+			);
+			name = CustomClasses;
+			sourceTree = "<group>";
+		};
+		EDCAD2EE1B690F62003ADD47 /* Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				EDCAD2EF1B690FBC003ADD47 /* Defaults.swift */,
+			);
+			name = Defaults;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC6220211B5FE78100C658FC /* EZQB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC6220411B5FE78100C658FC /* Build configuration list for PBXNativeTarget "EZQB" */;
+			buildPhases = (
+				DC62201E1B5FE78100C658FC /* Sources */,
+				DC62201F1B5FE78100C658FC /* Frameworks */,
+				DC6220201B5FE78100C658FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EZQB;
+			productName = EZQB;
+			productReference = DC6220221B5FE78100C658FC /* EZQB.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC6220361B5FE78100C658FC /* EZQBTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC6220441B5FE78100C658FC /* Build configuration list for PBXNativeTarget "EZQBTests" */;
+			buildPhases = (
+				DC6220331B5FE78100C658FC /* Sources */,
+				DC6220341B5FE78100C658FC /* Frameworks */,
+				DC6220351B5FE78100C658FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC6220391B5FE78100C658FC /* PBXTargetDependency */,
+			);
+			name = EZQBTests;
+			productName = EZQBTests;
+			productReference = DC6220371B5FE78100C658FC /* EZQBTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC62201A1B5FE78100C658FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "iOS Developer";
+				TargetAttributes = {
+					DC6220211B5FE78100C658FC = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = RQ6C6Q9U2B;
+					};
+					DC6220361B5FE78100C658FC = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = DC6220211B5FE78100C658FC;
+					};
+				};
+			};
+			buildConfigurationList = DC62201D1B5FE78100C658FC /* Build configuration list for PBXProject "EZQB" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DC6220191B5FE78100C658FC;
+			productRefGroup = DC6220231B5FE78100C658FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC6220211B5FE78100C658FC /* EZQB */,
+				DC6220361B5FE78100C658FC /* EZQBTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC6220201B5FE78100C658FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC62202D1B5FE78100C658FC /* Main.storyboard in Resources */,
+				DC6220321B5FE78100C658FC /* LaunchScreen.xib in Resources */,
+				DC62202F1B5FE78100C658FC /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC6220351B5FE78100C658FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC62201E1B5FE78100C658FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC35F8481B67EA94008B81A4 /* ResetPasswordViewController.swift in Sources */,
+				DCC2752D1B669F0B0051A0E0 /* JSONSerializable.swift in Sources */,
+				7A8E18DC1B74F99400735287 /* KeyboardActions.swift in Sources */,
+				DC6220481B5FF2F900C658FC /* SignUpViewController.swift in Sources */,
+				DC62202A1B5FE78100C658FC /* LoginViewController.swift in Sources */,
+				DCC2752F1B669F550051A0E0 /* NonceResponse.swift in Sources */,
+				DCC275211B669A140051A0E0 /* UploadImageCollectionViewController.swift in Sources */,
+				7AE5E4671B7F5D510021547A /* Reachability.swift in Sources */,
+				DCC2752B1B669E7A0051A0E0 /* ServiceApi.swift in Sources */,
+				7A8E18DA1B749C1900735287 /* Observers.swift in Sources */,
+				DC6220281B5FE78100C658FC /* AppDelegate.swift in Sources */,
+				7A736FE71B6CE9BC0096CAF3 /* UserLoginTextField.swift in Sources */,
+				7A736FE51B6CE8760096CAF3 /* AlertView.swift in Sources */,
+				C6A612401B725BBF001DEB89 /* NetworkFetcher.swift in Sources */,
+				DCC275231B669BCE0051A0E0 /* UploadImageCell.swift in Sources */,
+				C6A6123D1B725B69001DEB89 /* ServiceImageUploader.swift in Sources */,
+				EDCAD2F01B690FBC003ADD47 /* Defaults.swift in Sources */,
+				DCC275261B669E2B0051A0E0 /* DataProvider.swift in Sources */,
+				DCC275311B66A46F0051A0E0 /* BaseResponse.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC6220331B5FE78100C658FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC62203E1B5FE78100C658FC /* EZQBTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC6220391B5FE78100C658FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC6220211B5FE78100C658FC /* EZQB */;
+			targetProxy = DC6220381B5FE78100C658FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DC62202B1B5FE78100C658FC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC62202C1B5FE78100C658FC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DC6220301B5FE78100C658FC /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC6220311B5FE78100C658FC /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC62203F1B5FE78100C658FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC6220401B5FE78100C658FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC6220421B5FE78100C658FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EZQB",
+				);
+				INFOPLIST_FILE = EZQB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DC6220431B5FE78100C658FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EZQB",
+				);
+				INFOPLIST_FILE = EZQB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DC6220451B5FE78100C658FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = EZQBTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EZQB.app/EZQB";
+			};
+			name = Debug;
+		};
+		DC6220461B5FE78100C658FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = EZQBTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EZQB.app/EZQB";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC62201D1B5FE78100C658FC /* Build configuration list for PBXProject "EZQB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC62203F1B5FE78100C658FC /* Debug */,
+				DC6220401B5FE78100C658FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC6220411B5FE78100C658FC /* Build configuration list for PBXNativeTarget "EZQB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC6220421B5FE78100C658FC /* Debug */,
+				DC6220431B5FE78100C658FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC6220441B5FE78100C658FC /* Build configuration list for PBXNativeTarget "EZQBTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC6220451B5FE78100C658FC /* Debug */,
+				DC6220461B5FE78100C658FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC62201A1B5FE78100C658FC /* Project object */;
+}

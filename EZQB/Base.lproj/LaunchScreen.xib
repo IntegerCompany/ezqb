@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ezqb_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Yv5-zL-KBh">
+                    <rect key="frame" x="0.0" y="180" width="480" height="119"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.2666666667" green="0.43921568630000002" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Yv5-zL-KBh" secondAttribute="trailing" id="9kO-EP-mpF"/>
+                <constraint firstAttribute="centerY" secondItem="Yv5-zL-KBh" secondAttribute="centerY" constant="0.5" id="JLl-n5-XXb"/>
+                <constraint firstItem="Yv5-zL-KBh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="180" id="fiA-4g-2cw"/>
+                <constraint firstItem="Yv5-zL-KBh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sBE-Ax-FMj"/>
+                <constraint firstAttribute="centerX" secondItem="Yv5-zL-KBh" secondAttribute="centerX" id="sNt-jc-FVc"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="548" y="455"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ezqb_logo" width="250" height="63"/>
+    </resources>
+</document>
