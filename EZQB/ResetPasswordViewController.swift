@@ -27,7 +27,8 @@ class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(animated:Bool) {
         super.viewWillAppear(animated)
-
+        
+        self.userLoginTextField.becomeFirstResponder()
         self.addGestures()
         Observers.addObservers(self,
             withshowKBString: "keyboardWillShow:",

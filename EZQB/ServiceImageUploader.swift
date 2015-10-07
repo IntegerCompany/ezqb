@@ -101,7 +101,7 @@ class ServiceImageUploader {
                 body.appendData(boundaryDataStr!)
                 
                 let urlRequest = NSMutableURLRequest(URL: url!)
-                urlRequest.HTTPMethod = "PUT"
+                urlRequest.HTTPMethod = "POST"
                 urlRequest.addValue(contentType, forHTTPHeaderField: "Content-Type")
                 urlRequest.HTTPBody = body
                 

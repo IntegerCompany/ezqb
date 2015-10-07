@@ -29,12 +29,11 @@ class ServiceApi {
                         do{
                         let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
                             nonce = NonceResponse(json: json)
+                            completion(nonce: nonce, error: error)
                         }catch _ {
-                            
+                            print("Error responce : \(error)")
                         }
                     }
-                    
-                    completion(nonce: nonce, error: error)
             })
     }
     

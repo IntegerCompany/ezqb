@@ -29,10 +29,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        let tap = UITapGestureRecognizer(target: self, action: "hideKeyboard")
+        view.addGestureRecognizer(tap)
         
+        self.activityIndicator.hidesWhenStopped = true
         if Reachability.isConnectedToNetwork() == true {
             
 //            println("\(reachability?.currentReachabilityStatus().value)")
+            //
         } else {
             
             AlertView.showAlert(self,
@@ -43,6 +48,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         }
         
         self.setDelegates()
+    }
+    
+    func hideKeyboard(){
+        view.endEditing(true)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -85,29 +94,33 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
     private func loginWithEmail(email: String, andPassword password: String) {
         
         self.disableButtons(false)
-        self.activityIndicatorEnable(false)
-        self.activityIndicator.startAnimating()
+        self.isActivityIndicatorInAction(false)
         DataProvider.loginWithEmail(email,
             password: password) {
                 (response, error) -> Void in
-                
-                if error == nil
-                    &&
-                    response!.success {
-                        
+                if let requestOK = response {
+                    if requestOK.success {
                         self.storeEmailAndPasswordIfNeed()
-                        
                         self.showUploadViewController()
-                } else {
-                    
-                    AlertView.showAlert(self,
-                        title: "Exception",
-                        message: response!.error!,
-                        buttonTitle: "OK"
-                    )
+                    }else{
+                        AlertView.showAlert(self,
+                            title: "Wrong login or password",
+                            message: response!.error!,
+                            buttonTitle: "OK")
+                    }
+                }else{
+                    print("Login error")
+                    dispatch_async(dispatch_get_main_queue(), {
+                        AlertView.showAlert(self,
+                            title: "Connection",
+                            message: "Couldn't connecto to server",
+                            buttonTitle: "OK")
+                        self.disableButtons(true)
+                        self.isActivityIndicatorInAction(true)
+                    })
                 }
                 self.disableButtons(true)
-                self.activityIndicatorEnable(true)
+                self.isActivityIndicatorInAction(true)
         }
     }
     
@@ -121,14 +134,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         }
     }
     
-    
     // MARK: - enable / disable elements function
     
-    private func activityIndicatorEnable(bool: Bool) {
-        
-        self.activityIndicator.hidden = bool
-        bool ? self.activityIndicator.stopAnimating() :
+    private func isActivityIndicatorInAction(bool: Bool) {
+        if bool {
+            self.activityIndicator.stopAnimating()
+        }else{
             self.activityIndicator.startAnimating()
+        }
+//        self.activityIndicator.hidden = bool
+//        bool ? self.activityIndicator.stopAnimating() :
+//            self.activityIndicator.startAnimating()
     }
     
     private func disableButtons(bool: Bool) {

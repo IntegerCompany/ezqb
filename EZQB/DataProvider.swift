@@ -18,23 +18,21 @@ class DataProvider {
             ServiceApi.getNonceWithCompletion {
                 (nonce, error) -> Void in
                 
-                if error == nil
-                    &&
-                    nonce != nil {
-                        
-                        ServiceApi.loginWithNonce(nonce!.nonce!,
-                            email: email,
-                            password: password,
-                            completion: { (response, error) -> Void in
-                                
-                                dispatch_async(dispatch_get_main_queue(), {
-                                    self.hideStatusBarActivityIndicator()
-                                    completion(response: response, error: error)
-                                })
-                        })
-                } else {
-                    
+                if let inerNonce = nonce!.nonce {
+                    ServiceApi.loginWithNonce(inerNonce,
+                        email: email,
+                        password: password,
+                        completion: { (response, error) -> Void in
+                            
+                            dispatch_async(dispatch_get_main_queue(), {
+                                self.hideStatusBarActivityIndicator()
+                                completion(response: response, error: error)
+                            })
+                    })
+                }else {
                     completion(response: nil, error: error)
+                    print("Bad login")
+
                 }
             }
     }
