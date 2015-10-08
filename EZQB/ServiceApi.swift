@@ -121,7 +121,7 @@ class ServiceApi {
     
     private class func pathGetNonce() -> String {
         
-        return "/get_nonce/?controller=user&method=register"
+        return "/get_nonce/?controller=user&method=registers"
     }
     
     private class func pathLoginPathWithNonce(nonce: String, userName: String,
@@ -138,6 +138,6 @@ class ServiceApi {
     private class func pathRegisterWithUserName(userName: String, email: String, nonce: String,
         password: String) -> String {
             
-           return "/user/register/?username=\(userName)&email=\(email)&nonce=\(nonce)&display_name=\(userName)&user_pass=\(password)"
+           return "/user/registers/?username=\(userName)&email=\(email)&nonce=\(nonce)&display_name=\(userName)&user_pass=\(password)"
     }
 }
