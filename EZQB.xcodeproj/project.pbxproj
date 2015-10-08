@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		660113981BC6719D00D58B92 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660113971BC6719D00D58B92 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		7A736FE51B6CE8760096CAF3 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A736FE41B6CE8760096CAF3 /* AlertView.swift */; };
 		7A736FE71B6CE9BC0096CAF3 /* UserLoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A736FE61B6CE9BC0096CAF3 /* UserLoginTextField.swift */; };
 		7A8E18DA1B749C1900735287 /* Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8E18D91B749C1900735287 /* Observers.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		660113971BC6719D00D58B92 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		7A736FE41B6CE8760096CAF3 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		7A736FE61B6CE9BC0096CAF3 /* UserLoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginTextField.swift; sourceTree = "<group>"; };
 		7A8E18D91B749C1900735287 /* Observers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observers.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			children = (
 				DCC275271B669E390051A0E0 /* ServiceApi */,
 				DCC275251B669E2B0051A0E0 /* DataProvider.swift */,
+				660113971BC6719D00D58B92 /* SwiftyJSON.swift */,
 			);
 			name = DataProvider;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				DC35F8481B67EA94008B81A4 /* ResetPasswordViewController.swift in Sources */,
 				DCC2752D1B669F0B0051A0E0 /* JSONSerializable.swift in Sources */,
 				7A8E18DC1B74F99400735287 /* KeyboardActions.swift in Sources */,
+				660113981BC6719D00D58B92 /* SwiftyJSON.swift in Sources */,
 				DC6220481B5FF2F900C658FC /* SignUpViewController.swift in Sources */,
 				DC62202A1B5FE78100C658FC /* LoginViewController.swift in Sources */,
 				DCC2752F1B669F550051A0E0 /* NonceResponse.swift in Sources */,

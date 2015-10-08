@@ -296,6 +296,7 @@
         <!--Upload Image Collection View Controller-->
         <scene sceneID="1XK-6q-TOn">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QCp-ty-EEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <collectionViewController id="5Ul-sl-QFJ" customClass="UploadImageCollectionViewController" customModule="EZQB" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="k5k-Ry-kF1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -348,7 +349,6 @@
                         <outlet property="collection" destination="k5k-Ry-kF1" id="wp0-8G-CNL"/>
                     </connections>
                 </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QCp-ty-EEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1554" y="-321"/>
         </scene>
