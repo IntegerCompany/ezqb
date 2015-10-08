@@ -77,7 +77,7 @@ class ServiceImageUploader {
             
 //            let url: NSURL? = NSURL(string: "http://ezquickbooksonline.com/httpdocs/wp-content/plugins/wp-client/pluginajax.php?user_id=sev&filename1=filename12346&p=d9arf80q9294oijhafafs")
             
-            let url: NSURL? = NSURL(string: "http://ezquickbooksonline.com/httpdocs/wp-content/plugins/wp-client/pluginajax.php?user_id=26&filename1=image.jpg&p=d9arf80q9294oijhafafs")
+            let url: NSURL? = NSURL(string: "http://ezquickbooksonline.com/httpdocs/wp-content/plugins/wp-client/pluginajax_ios.php?user_id=26&filename1=image.jpg&p=d9arf80q9294oijhafafs")
             
             if url == nil {
                 
@@ -101,7 +101,7 @@ class ServiceImageUploader {
                 body.appendData(boundaryDataStr!)
                 
                 let urlRequest = NSMutableURLRequest(URL: url!)
-                urlRequest.HTTPMethod = "POST"
+                urlRequest.HTTPMethod = "PUT"
                 urlRequest.addValue(contentType, forHTTPHeaderField: "Content-Type")
                 urlRequest.HTTPBody = body
                 

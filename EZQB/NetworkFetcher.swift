@@ -53,7 +53,7 @@ class NetworkFetcher {
             print("data is nil")
         } else {
             do {
-                let dictionary: AnyObject = try NSJSONSerialization.JSONObjectWithData(data!,
+                let dictionary = try NSJSONSerialization.JSONObjectWithData(data!,
                 options: NSJSONReadingOptions())
                 print(dictionary)
             }catch _ {
