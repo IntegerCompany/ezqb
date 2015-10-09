@@ -9,37 +9,46 @@
 import Foundation
 
 class Defaults {
+  
+  private static let Email = "EMAIL"
+  private static let Password = "PASSWORD"
+  private static let UserId = "USER_ID"
+  
+  class func setEmail(email: String, andPassword password: String) {
     
-    private static let EMAIL = "EMAIL"
-    private static let PASSWORD = "PASSWORD"
+    NSUserDefaults.standardUserDefaults().setObject(email,
+      forKey: Defaults.Email
+    )
+    NSUserDefaults.standardUserDefaults().setObject(password,
+      forKey: Defaults.Password
+    )
+  }
+  
+  class func setUserId(userId : Int){
+    NSUserDefaults.standardUserDefaults().setObject(userId,
+      forKey: Defaults.UserId
+    )
+  }
+  
+  class func getUserId() -> (Int){
+    let userId = NSUserDefaults.standardUserDefaults().integerForKey(Defaults.UserId)
+    return userId
+  }
+  
+  class func getEmailAndPassword() -> (email: String, password: String)? {
     
-    class func setEmail(email: String, andPassword password: String) {
-        
-        NSUserDefaults.standardUserDefaults().setObject(email,
-            forKey: Defaults.EMAIL
-        )
-        NSUserDefaults.standardUserDefaults().setObject(password,
-            forKey: Defaults.PASSWORD
-        )
+    if let email = NSUserDefaults.standardUserDefaults().stringForKey(Defaults.Email),
+      let password = NSUserDefaults.standardUserDefaults().stringForKey(Defaults.Password){
+        return (email, password)
+    }else{
+      return nil
     }
     
-    class func getEmailAndPassword() -> (email: String, password: String)? {
-        
-        let email = NSUserDefaults.standardUserDefaults().stringForKey(Defaults.EMAIL)
-        let password = NSUserDefaults.standardUserDefaults().stringForKey(Defaults.PASSWORD)
-        
-        if email == nil
-            ||
-            password == nil {
-                
-                return nil
-        }
-        return (email!, password!)
-    }
+  }
+  
+  class func resetEmailAndPassword() {
     
-    class func resetEmailAndPassword() {
-        
-        let appDomain: NSString = NSBundle.mainBundle().bundleIdentifier!
-        NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain as String)
-    }
+    let appDomain: NSString = NSBundle.mainBundle().bundleIdentifier!
+    NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain as String)
+  }
 }

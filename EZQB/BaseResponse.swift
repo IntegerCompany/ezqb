@@ -12,13 +12,16 @@ class BaseResponse : JSONSerializable {
     
     var status: String!
     var error: String?
+  var userId : Int?
     
     var success: Bool {
         return status == "ok"
     }
     
     required init(json: NSDictionary) {
-        
+        print("\(json)")
+      self.userId = json.valueForKey("user")?.valueForKey("id") as? Int
+      print("\(userId)")
         self.status = json.valueForKey("status") as! String
         self.error = json.valueForKey("error") as? String
     }

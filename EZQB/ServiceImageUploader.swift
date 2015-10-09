@@ -73,12 +73,12 @@ class ServiceImageUploader {
     class func uploadImage(originalImage: UIImage, withName name: String,
         completionHandler: (data: NSData?, response: NSURLResponse!, error: NSError?) ->Void) {
           
-           let url: NSURL? = NSURL(string: "http://ezquickbooksonline.com/httpdocs/wp-content/plugins/wp-client/pluginajax_ios.php?user_id=26&filename1=image.jpg&p=d9arf80q9294oijhafafs")
+           let url: NSURL? = NSURL(string: "http://ezquickbooksonline.com/httpdocs/wp-content/plugins/wp-client/new_api_ios.php")
             
           let compressedImage = self.compressForUploadImage(originalImage, scale: 0.5)
           
           let data = UIImageJPEGRepresentation(compressedImage, 0.5)
-          let encodedImage = data?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
+          let encodedImage = data?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions())
           
           let parameters = ["image": encodedImage!, "otherParam": "otherValue"]
           
@@ -89,8 +89,8 @@ class ServiceImageUploader {
           
           var error: NSError?
           do{
-            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions.PrettyPrinted)
-            print("\(try NSJSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions.PrettyPrinted))")
+            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions())
+            print("\(try NSJSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions()))")
           }catch{
             print("error in json converting")
           }
