@@ -227,39 +227,74 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
   }
   
   func testSendPhoto(){
-    let parameters = ["base64": "base64", "name": "image1","userId":10]
-    let data = ["imageData" : parameters]
-    let json: JSON =  ["imageData": parameters]
-    print("\(json)")
-    do{
-      print("\(try NSJSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions()))")
-    }catch{
-      print("error in json converting")
-    }
-    
+//    let parameters = ["base64": "base64", "name": "image1","userId":10]
+//    let data = ["imageData" : parameters]
+//    let json: JSON =  ["imageData": parameters]
+//    print("\(json)")
+//    do{
+//      print("\(try NSJSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions()))")
+//    }catch{
+//      print("error in json converting")
+//    }
+//    
+//    let url: NSURL? = NSURL(string: "http://ezquickbooksonline.com/httpdocs/wp-content/plugins/wp-client/new_api_ios.php")
+//    
+//    let session = NSURLSession.sharedSession()
+//    let request = NSMutableURLRequest(URL: url!)
+//    request.HTTPMethod = "POST"
+//    
+//    var error: NSError?
+//    do{
+//      request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(data, options: NSJSONWritingOptions())
+//      print("\(try NSJSONSerialization.dataWithJSONObject(data, options: NSJSONWritingOptions()))")
+//    }catch{
+//      print("error in json converting")
+//    }
+//    
+//    if let error = error {
+//      print("\(error.localizedDescription)")
+//    }
+//    
+//    let dataTask = session.dataTaskWithRequest(request) { data, response, error in
+//      print("\(response)")
+//    }
+//    
+//    dataTask.resume()
     let url: NSURL? = NSURL(string: "http://ezquickbooksonline.com/httpdocs/wp-content/plugins/wp-client/new_api_ios.php")
-    
-    let session = NSURLSession.sharedSession()
-    let request = NSMutableURLRequest(URL: url!)
+    let request = NSMutableURLRequest(URL:url!);
     request.HTTPMethod = "POST"
+    // Compose a query string
+    let postString = "firstName=James&lastName=Bond"
     
-    var error: NSError?
-    do{
-      request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(data, options: NSJSONWritingOptions())
-      print("\(try NSJSONSerialization.dataWithJSONObject(data, options: NSJSONWritingOptions()))")
-    }catch{
-      print("error in json converting")
+    request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
+    
+    let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+        data, response, error in
+        
+        if error != nil
+        {
+            print("error=\(error)")
+            return
+        }
+        
+        // You can print out response object
+        print("response = \(response)")
+        
+        // Print out response body
+        let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+        print("responseString = \(responseString)")
+        
+        //Let’s convert response sent from a server side script to a NSDictionary object:
+        do{
+            let myJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSDictionary
+            print(myJSON)
+        }catch{
+            print("ERROR")
+        }
+        
     }
     
-    if let error = error {
-      print("\(error.localizedDescription)")
-    }
-    
-    let dataTask = session.dataTaskWithRequest(request) { data, response, error in
-      print("\(response)")
-    }
-    
-    dataTask.resume()
+    task.resume()
 
 
   }
