@@ -73,74 +73,48 @@ class ServiceImageUploader {
     class func uploadImage(originalImage: UIImage, withName name: String,
         completionHandler: (data: NSData?, response: NSURLResponse!, error: NSError?) ->Void) {
           
-           let url: NSURL? = NSURL(string: "http://ezquickbooksonline.com/httpdocs/wp-content/plugins/wp-client/new_api_ios.php")
-            
-          let compressedImage = self.compressForUploadImage(originalImage, scale: 0.5)
+          let url: NSURL? = NSURL(string: "http://ezquickbooksonline.com/httpdocs/wp-content/plugins/wp-client/new_api_ios.php")
+          let request = NSMutableURLRequest(URL:url!);
+          request.HTTPMethod = "POST"
           
+          // Compose a query string          
+          let compressedImage = self.compressForUploadImage(originalImage, scale: 0.5)
           let data = UIImageJPEGRepresentation(compressedImage, 0.5)
           let encodedImage = data?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions())
           
-          let parameters = ["image": encodedImage!, "otherParam": "otherValue"]
+          let parameters = ["base64": encodedImage!, "name": name,"userId":Defaults.getUserId()]
+          let json: JSON =  ["imageData": parameters]
+          let postString = json.rawString()!
           
-          let session = NSURLSession.sharedSession()
-          let request = NSMutableURLRequest(URL: url!)
-          request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-          request.HTTPMethod = "POST"
+          request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
           
-          var error: NSError?
-          do{
-            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions())
-            print("\(try NSJSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions()))")
-          }catch{
-            print("error in json converting")
+          let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+            data, response, error in
+            
+            if error != nil
+            {
+              print("error=\(error)")
+              return
+            }
+            
+            // You can print out response object
+            print("response = \(response)")
+            
+            // Print out response body
+            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            print("responseString = \(responseString)")
+            
+            //Let’s convert response sent from a server side script to a NSDictionary object:
+            do{
+              let myJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSDictionary
+              print(myJSON)
+            }catch{
+              print("ERROR")
+            }
+            
           }
           
-          
-          if let error = error {
-            print("\(error.localizedDescription)")
-          }
-          
-          let dataTask = session.dataTaskWithRequest(request) { data, response, error in
-            // Handle response
-          }
-          
-          dataTask.resume()
-            
-//            let url: NSURL? = NSURL(string: "http://ezquickbooksonline.com/httpdocs/wp-content/plugins/wp-client/pluginajax.php?user_id=sev&filename1=filename12346&p=d9arf80q9294oijhafafs")
-            
-          
-            
-//            if url == nil {
-//                
-//                completionHandler(data: nil, response: NSURLResponse(),
-//                    error: NSError(domain: "invalid url", code: 0, userInfo: nil)
-//                )
-//            } else {
-//                
-//                let contentType = String(format:"multipart/form-data; boundary=%@", "------------0xKhTmLbOuNdArY")
-//                let boundaryDataStr = String(format:"--%@\r\n", "------------0xKhTmLbOuNdArY").dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
-//                let imgHeaderDataStr = String(format:"Content-Disposition: form-data; name=\"%@\"; filename=\"image.jpg\"\r\n", "photo").dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
-//                let imgContentType = String("Content-Type: image/jpeg\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
-//                
-//                let body = NSMutableData()
-//                body.appendData(boundaryDataStr!)
-//                body.appendData(boundaryDataStr!)
-//                body.appendData(imgHeaderDataStr!)
-//                body.appendData(imgContentType!)
-//                body.appendData(UIImageJPEGRepresentation(compressedImage, 1.0)!)
-//                body.appendData(String("\r\n").dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!)
-//                body.appendData(boundaryDataStr!)
-//                
-//                let urlRequest = NSMutableURLRequest(URL: url!)
-//                urlRequest.HTTPMethod = "PUT"
-//                urlRequest.addValue(contentType, forHTTPHeaderField: "Content-Type")
-//                urlRequest.HTTPBody = body
-//                
-//                NetworkFetcher.uploadDataWithURLRequest(urlRequest,
-//                    data: body,
-//                    withCompletion: completionHandler
-//                )
-//            }
+          task.resume()
     }
     
     

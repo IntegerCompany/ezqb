@@ -12,7 +12,7 @@ import UIKit
 // write an extension for "UIImagePickerControllerDelegate"
 // and keep in mind !
 // any extension gives you divided part of codes so your code would be more readable
-class UploadImageCollectionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UINavigationBarDelegate {
+class UploadImageCollectionViewController: UIViewController, UINavigationBarDelegate {
     
     var userID: String?
     @IBOutlet var collection: UICollectionView!
@@ -82,24 +82,7 @@ class UploadImageCollectionViewController: UIViewController, UIImagePickerContro
     // and another func named "getPhotoFromCamera"
     
     // skatolyk: Why do we have to create one more function with the name "getPhotoFromCamera"
-    func getPhotoFromGallery(string: String) {
-        
-        let picker = UIImagePickerController()
-        picker.delegate = self // skatolyk: that why we need UINavigationControllerDelegate, UINavigationBarDelegate protocols
-        picker.allowsEditing = false
-        
-        if string == "Open Gallery" {
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
-                picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-            }
-        } else {
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
-                picker.sourceType = UIImagePickerControllerSourceType.Camera
-            }
-        }
-        self.presentViewController(picker, animated: true, completion: nil)
-    }
-    
+  
     
     // MARK: - setBarButtonItem with Actions
     
@@ -126,7 +109,7 @@ class UploadImageCollectionViewController: UIViewController, UIImagePickerContro
         self.activityIndicatorEnable(false)
         for index in 0...self.imagesToUpLoad.count - 1 {
             DataProvider.uploadPhoto(self.imagesToUpLoad[index],
-                withName: "fileName\(index)") { (error) -> Void in
+                withName: "image\(NSDate.timeIntervalSinceReferenceDate())") { (error) -> Void in
                     
                     if error == nil {
                         if index == self.imagesToUpLoad.count - 1 {
@@ -170,6 +153,27 @@ class UploadImageCollectionViewController: UIViewController, UIImagePickerContro
     }
 }
 
+extension UploadImageCollectionViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+  
+  func getPhotoFromGallery(string: String) {
+    
+    let picker = UIImagePickerController()
+    picker.delegate = self // skatolyk: that why we need UINavigationControllerDelegate, UINavigationBarDelegate protocols
+    picker.allowsEditing = false
+    
+    if string == "Open Gallery" {
+      if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+        picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+      }
+    } else {
+      if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+        picker.sourceType = UIImagePickerControllerSourceType.Camera
+      }
+    }
+    self.presentViewController(picker, animated: true, completion: nil)
+  }
+
+}
 
 //MARK: UICollectionViewDataSource, UICollectionViewDelegate
 
